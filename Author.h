@@ -34,5 +34,9 @@ public:
             cerr << "Invalid birth year. It should be between 900 and 2025." << endl;
         }
     }
+
+    string to_string() {
+        return "Author: " + name + ", Birth Year: " + std::to_string(birthYear);
+    }
     
 };
