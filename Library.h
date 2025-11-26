@@ -3,7 +3,7 @@
 #include <iostream>
 #include "Author.h"
 #include "Book.h"
-#include "Reader.h"
+#include "Member.h"
 #include "Loan.h"
 using namespace std;
 
@@ -12,7 +12,7 @@ private:
     vector<Book> books;
     vector<Author> authors;
     vector<Loan> loans;
-    vector<Reader> readers;
+    vector<Member> readers;
 public:
     void addBook(const Book& book) {
         books.push_back(book);

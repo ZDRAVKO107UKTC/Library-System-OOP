@@ -1,21 +1,21 @@
-#ifndef READER_H
-#define READER_H
+#ifndef Member_H
+#define Member_H
 
 #include <string>
 #include <iostream>
 using namespace std;
 
-class Reader {
+class Member {
 private:
     string name;
     string memberID;
     int yearJoined;
 public:
-    Reader() : name("Unknown"), memberID("0000"), yearJoined(2000) {}
-    explicit Reader(string name, string memberID, int yearJoined)
+    Member() : name("Unknown"), memberID("0000"), yearJoined(2000) {}
+    explicit Member(string name, string memberID, int yearJoined)
         : name(std::move(name)), memberID(std::move(memberID)), yearJoined(yearJoined) {}
         string to_string() const {
-        return "Reader: " + name + ", Member ID: " + memberID + ", Year Joined: " + std::to_string(yearJoined);
+        return "Member: " + name + ", Member ID: " + memberID + ", Year Joined: " + std::to_string(yearJoined);
     }
     string getName() const {
         return name;
@@ -45,4 +45,4 @@ public:
     }
 };
 
-#endif // READER_H
+#endif // Member_H

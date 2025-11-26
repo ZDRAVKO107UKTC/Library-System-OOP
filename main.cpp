@@ -21,8 +21,8 @@ int main() {
     lib.addBook(book2);
     lib.addBook(book3);
 
-    Reader r1{"Petar Petrov", "M001", 2023};
-    Reader r2{"Maria Ivanova", "M002", 2020};
+    Member r1{"Petar Petrov", "M001", 2023};
+    Member r2{"Maria Ivanova", "M002", 2020};
     lib.addReader(r1);
     lib.addReader(r2);
 
