@@ -5,15 +5,7 @@
 #include <string>
 #include <sstream>
 #include <utility>
-
-struct Author {
-    std::string name;
-
-    friend std::ostream& operator<<(std::ostream& os, const Author& a) {
-        os << a.name;
-        return os;
-    }
-};
+#include "Author.h"
 
 class Book {
 private:
@@ -26,8 +18,8 @@ private:
     inline static int totalBooks = 0; 
 
 public:
-    Book() 
-        : title("Unknown"), author{"Unknown"}, year(2000), price(0.0), isbn("000-000") {
+    Book()
+        : title("Unknown"), author(), year(2000), price(0.0), isbn("000-000") {
         totalBooks++; 
     }
 
@@ -101,10 +93,10 @@ public:
     }
 
     std::string to_string() const {
-        std::stringstream ss;
-        ss << "'" << title << "' by " << author 
-           << " (" << year << "), $" << price 
-           << " [ISBN: " << isbn << "]";
+          std::stringstream ss;
+          ss << "'" << title << "' by " << author.getName()
+              << " (" << year << "), $" << price
+              << " [ISBN: " << isbn << "]";
         return ss.str();
     }
 

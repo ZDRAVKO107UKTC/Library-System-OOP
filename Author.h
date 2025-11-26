@@ -1,4 +1,8 @@
-#include<iostream>
+#ifndef AUTHOR_H
+#define AUTHOR_H
+
+#include <iostream>
+#include <string>
 using namespace std;
 
 class Author {
@@ -28,15 +32,12 @@ public:
     }
     
     void setBirthYear(int birthYear) {
-        if (birthYear >= 1900 && birthYear <= 2025) {
+        if (birthYear >= 1850 && birthYear <= 2025) {
             this->birthYear = birthYear;
         } else {
-            cerr << "Invalid birth year. It should be between 900 and 2025." << endl;
+            cerr << "Invalid birth year. It should be between 1850 and 2025." << endl;
         }
     }
-
-    string to_string() {
-        return "Author: " + name + ", Birth Year: " + std::to_string(birthYear);
-    }
-    
 };
+
+#endif // AUTHOR_H

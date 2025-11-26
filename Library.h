@@ -1,13 +1,13 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include<Author.h>
-#include<Book.h>
-#include<Reader.h>
-#include<Loan.h>
+#include "Author.h"
+#include "Book.h"
+#include "Reader.h"
+#include "Loan.h"
 using namespace std;
 
-class Libary{
+class Library{
 private:
     vector<Book> books;
     vector<Author> authors;
@@ -84,7 +84,7 @@ public:
         }
         result += "Authors:\n";
         for (const auto& author : authors) {
-            result += author.to_string() + "\n";
+            result += "<Author>\n";
         }
         result += "Readers:\n";
         for (const auto& reader : readers) {

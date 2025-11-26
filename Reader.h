@@ -1,3 +1,6 @@
+#ifndef READER_H
+#define READER_H
+
 #include <string>
 #include <iostream>
 using namespace std;
@@ -41,3 +44,5 @@ public:
         }
     }
 };
+
+#endif // READER_H
