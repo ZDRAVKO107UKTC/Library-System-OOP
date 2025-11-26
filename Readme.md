@@ -3,7 +3,7 @@
 
 **Кратко описание**
 
-Това е малка C++ система за управление на библиотека — моделира се работа с книги, автори, читатели и заеми. Кодът съдържа класове за `Author`, `Book`, `Reader`, `Loan` и `Library`, както и примерен `main.cpp`, който демонстрира техните взаимодействия.
+Това е малка C++ система за управление на библиотека — моделира се работа с книги, автори, членове и заеми. Кодът съдържа класове за `Author`, `Book`, `Reader`, `Loan` и `Library`, както и примерен `main.cpp`, който демонстрира техните взаимодействия.
 
 Проектът илюстрира следните ООП теми: конструктори и деструктори, copy/move семантика, статични членове, валидация на данни и използване на STL контейнери.
 
@@ -14,7 +14,7 @@
 ```
 Author.h
 Book.h
-Reader.h
+Member.h
 Loan.h
 Library.h
 main.cpp
@@ -48,9 +48,9 @@ Books:
 Authors:
 Author: Ivan Vazov, Birth Year: 1850
 Author: Hristo Botev, Birth Year: 1848
-Readers:
-Reader: Petar Petrov, Member ID: M001, Year Joined: 2023
-Reader: Maria Ivanova, Member ID: M002, Year Joined: 2020
+Members:
+Member: Petar Petrov, Member ID: M001, Year Joined: 2023
+Member: Maria Ivanova, Member ID: M002, Year Joined: 2020
 Loans:
 
 Total books (static): 6
@@ -85,7 +85,7 @@ Books by 'Vazov':
 - Конструктори: default и параметризиран (`Author(string, int)`).
 - Методи: `to_string() const`, getters/setters. Setter за година прави проверка (1850–2025) и отчита невалидни стойности чрез `cerr`.
 
-2) `Reader` (`Reader.h`)
+2) `Member` (`Member.h`)
 - Членове: `std::string name`, `std::string memberID`, `int yearJoined`.
 - Конструктори: default и параметризиран (използва `std::move`).
 - Методи: `to_string() const`, getters и сетъри с валидация (година 1900–2025, непразен `memberID`).
@@ -102,8 +102,8 @@ Books by 'Vazov':
 - Методи: `markReturned()`, `isOverdue(const string& today) const`, `to_string() const`.
 
 5) `Library` (`Library.h`)
-- Членове: `std::vector<Book> books`, `std::vector<Author> authors`, `std::vector<Loan> loans`, `std::vector<Reader> readers`.
-- Методи: `addBook`, `addAuthor`, `addReader`, `addLoan`, `hasBook(const string& isbn) const` (търси ISBN чрез `to_string()`), `isBookAvailable(const string& isbn) const` (проверява текущите заеми), `loanBook(...)` (добавя `Loan`), `returnBook(...)` (маркира връщането), `findBooksByAuthor(const string&)` (търси в `to_string()` на книгите), `to_string() const` (редовно резюме на библиотеката).
+- Членове: `std::vector<Book> books`, `std::vector<Author> authors`, `std::vector<Loan> loans`, `std::vector<Member> members`.
+- Методи: `addBook`, `addAuthor`, `addMember`, `addLoan`, `hasBook(const string& isbn) const` (търси ISBN чрез `to_string()`), `isBookAvailable(const string& isbn) const` (проверява текущите заеми), `loanBook(...)` (добавя `Loan`), `returnBook(...)` (маркира връщането), `findBooksByAuthor(const string&)` (търси в `to_string()` на книгите), `to_string() const` (редовно резюме на библиотеката).
 
 **Образователни цели и бележки**
 - Демонстрира използване на default/параметрични, copy и move конструктори и оператори за присвояване.

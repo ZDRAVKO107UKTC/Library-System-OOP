@@ -12,7 +12,7 @@ private:
     vector<Book> books;
     vector<Author> authors;
     vector<Loan> loans;
-    vector<Member> readers;
+    vector<Member> members;
 public:
     void addBook(const Book& book) {
         books.push_back(book);
@@ -20,8 +20,8 @@ public:
     void addAuthor(const Author& author) {
         authors.push_back(author);
     }
-    void addReader(const Reader& reader) {
-        readers.push_back(reader);
+    void addMember(const Member& member) {
+        members.push_back(member);
     }
     void addLoan(const Loan& loan) {
         loans.push_back(loan);
@@ -86,9 +86,9 @@ public:
         for (const auto& author : authors) {
             result += author.to_string() + "\n";
         }
-        result += "Readers:\n";
-        for (const auto& reader : readers) {
-            result += reader.to_string() + "\n";
+        result += "Members:\n";
+        for (const auto& member : members) {
+            result += member.to_string() + "\n";
         }
         result += "Loans:\n";
         for (const auto& loan : loans) {

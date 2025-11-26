@@ -21,10 +21,10 @@ int main() {
     lib.addBook(book2);
     lib.addBook(book3);
 
-    Member r1{"Petar Petrov", "M001", 2023};
-    Member r2{"Maria Ivanova", "M002", 2020};
-    lib.addReader(r1);
-    lib.addReader(r2);
+    Member m1{"Petar Petrov", "M001", 2023};
+    Member m2{"Maria Ivanova", "M002", 2020};
+    lib.addMember(m1);
+    lib.addMember(m2);
 
     cout << "=== Initial library snapshot ===\n";
     cout << lib.to_string() << "\n";
