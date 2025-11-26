@@ -84,7 +84,7 @@ public:
         }
         result += "Authors:\n";
         for (const auto& author : authors) {
-            result += "<Author>\n";
+            result += author.to_string() + "\n";
         }
         result += "Readers:\n";
         for (const auto& reader : readers) {

@@ -40,4 +40,4 @@ public:
     }
 };
 
-#endif // AUTHOR_H
+#endif
